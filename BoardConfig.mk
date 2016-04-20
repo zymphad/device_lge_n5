@@ -31,9 +31,16 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := hammerhead_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
-TARGET_GCC_VERSION_ARM := 4.9
+TARGET_KERNEL_CONFIG := hells_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/hells
+TARGET_GCC_VERSION_ARM := 5.3
+
+# Uber Optimizations
+export CLANG_O3 := true
+export STRICT_ALIASING := false
+export KRAIT_TUNINGS := true
+export GRAPHITE_OPTS := false
+export ENABLE_GCCONLY := true
 
 TOUCH_BOOST_DEBUG := false
 
